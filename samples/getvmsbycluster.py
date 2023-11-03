@@ -35,7 +35,7 @@ def vmsummary(summary, guest):
     vmsum = {}
     config = summary.config
     net = get_nics(guest)
-    vmsum['mem'] = str(config.memorySizeMB / 1024)
+    #vmsum['mem'] = str(config.memorySizeMB / 1024)
     vmsum['diskGB'] = str("%.2f" % (summary.storage.committed / 1024**3))
     vmsum['cpu'] = str(config.numCpu)
     vmsum['path'] = config.vmPathName
@@ -51,7 +51,7 @@ def vm2dict(datacenter, cluster, host, vm, summary):
     # If nested folder path is required, split into a separate function
     vmname = vm.summary.config.name
     data[datacenter][cluster][host][vmname]['folder'] = vm.parent.name
-    data[datacenter][cluster][host][vmname]['mem'] = summary['mem']
+    #data[datacenter][cluster][host][vmname]['mem'] = summary['mem']
     data[datacenter][cluster][host][vmname]['diskGB'] = summary['diskGB']
     data[datacenter][cluster][host][vmname]['cpu'] = summary['cpu']
     data[datacenter][cluster][host][vmname]['path'] = summary['path']

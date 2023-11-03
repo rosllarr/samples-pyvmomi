@@ -11,11 +11,11 @@
 
 """
 import atexit
-from time import clock
+from time import process_time
 from pyVmomi import vim
 from tools import cli, service_instance, pchelper
 
-START = clock()
+START = process_time()
 
 
 def endit():
@@ -24,7 +24,7 @@ def endit():
 
     :return:
     """
-    end = clock()
+    end = process_time()
     total = end - START
     print("Completion time: {0} seconds.".format(total))
 

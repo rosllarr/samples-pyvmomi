@@ -29,6 +29,7 @@ def print_vm_info(virtual_machine):
     folder with depth protection
     """
     summary = virtual_machine.summary
+    print("ID         : ", summary.vm)
     print("Name       : ", summary.config.name)
     print("Template   : ", summary.config.template)
     print("Path       : ", summary.config.vmPathName)
